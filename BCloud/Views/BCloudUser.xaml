@@ -31,13 +31,13 @@
     <Window.DataContext>
         <viewModels:BCloudViewModel/>
     </Window.DataContext>
-    <Border  CornerRadius="20" Background="#50808f" BorderBrush="White" BorderThickness="3" >
+    <Border x:Name="BackgroundBorder" CornerRadius="20" Background="#50808f" BorderBrush="White" BorderThickness="3" >
         <Grid ShowGridLines="False" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Border CornerRadius="20 20 0 0" Background="#217894" BorderThickness="0">
+            <Border x:Name="TitleBorder" CornerRadius="20 20 0 0" Background="#217894" BorderThickness="0">
                 <Grid>
                     <DockPanel>
                         <Grid>
@@ -61,14 +61,14 @@
                     </Grid>
                 </Border>
                 <Grid Grid.Row="1">
-                    <Canvas x:Name="MarqueeCanvas" >
-                        <Image x:Name="ScrollingCloud" Width="200" Source="../Appearance/Images/cloud.png"/>
+                    <Canvas>
+                        <Image x:Name="ScrollingImage1" Width="150"/>
                     </Canvas>
-                    <Canvas x:Name="MarqueeCanvas1" >
-                        <Image x:Name="ScrollingCloud1" Width="200" Source="../Appearance/Images/cloud.png"/>
+                    <Canvas>
+                        <Image x:Name="ScrollingImage2" Width="150"/>
                     </Canvas>
-                    <Canvas x:Name="MarqueeCanvas2">
-                        <Image x:Name="ScrollingCloud2" Width="200" Source="../Appearance/Images/cloud.png"/>
+                    <Canvas>
+                        <Image x:Name="ScrollingImage3" Width="150"/>
                     </Canvas>
                     <DockPanel Margin="0 20">
                         <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
@@ -97,7 +97,7 @@
                                                                                 </DataTemplate>
                                                                             </ItemsControl.ItemTemplate>
                                                                         </ItemsControl>
-                                                                        <Border Background="#5D90A0" Margin="5" BorderThickness="0" CornerRadius="20">
+                                                                        <Border x:Name="UserBackgroundBorder" Background="{Binding ItSelf.BackgroundColor, UpdateSourceTrigger=Explicit}" Margin="5" BorderThickness="0" CornerRadius="20">
                                                                             <Grid>
                                                                                 <Label Width="35" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                                                                                 <StackPanel Orientation="Horizontal">

@@ -19,6 +19,9 @@
       <None Remove="ButtonAppereance\Images\UserStatusImages\5.png" />
       <None Remove="ButtonAppereance\Images\UserStatusImages\2.png" />
       <None Remove="ButtonAppearance\Images\UserStatusImages\1.png" />
+      <Content Include="Appearance\AppearanceSettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
       <Content Include="Appearance\Images\UserStatusImages\1.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
@@ -69,9 +72,6 @@
       </Content>
       <None Remove="Appearance\Images\7568ca7cb0b5e018d5e5f1cf0272e428.jpg" />
       <None Remove="Appearance\Images\cloud.png" />
-      <Content Include="Appearance\Images\cloud.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Appearance\Images\drag_here_image.jpg" />
       <None Remove="Appearance\Images\drag_here_image.png" />
       <None Remove="Appearance\Images\UserStatusImages\drag_here_image.png" />
@@ -119,10 +119,31 @@
       <Content Include="Appearance\Images\no_bell.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Appearance\ColorAssets\Pink.json" />
+      <Content Include="Appearance\Themes\Pink.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Appearance\ColorAssets\Orange.json" />
+      <Content Include="Appearance\Themes\Orange.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Appearance\Themes\Images\Candy.png" />
+      <Content Include="Appearance\Themes\Images\Candy.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Appearance\Themes\Images\Fire.png" />
+      <Content Include="Appearance\Themes\Images\Fire.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Appearance\Themes\Images\Cloud.png" />
+      <Content Include="Appearance\Themes\Images\Cloud.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+      <PackageReference Include="System.Management" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -131,6 +152,17 @@
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
       </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Appearance\AppearanceSettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Appearance\ColorAssets\Blue.json" />
+      <Content Include="Appearance\Themes\Blue.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

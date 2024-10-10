@@ -3,12 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:views="clr-namespace:BCloud.Views"
         mc:Ignorable="d"
         Title="BCloud" Height="600" Width="440" AllowDrop="True"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     <Window.Resources>
-        <Style x:Key="HighlightButtonStyle" TargetType="Button">
+        <Style TargetType="Button">
             <Setter Property="Background" Value="#FF888888"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderBrush" Value="#FF444444"/>
@@ -35,13 +34,13 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Border CornerRadius="20" Background="#50808f" BorderBrush="White" BorderThickness="3" >
+    <Border x:Name="BackgroundBorder" CornerRadius="20" Background="#50808f" BorderBrush="White" BorderThickness="3" >
         <Grid ShowGridLines="False" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Border CornerRadius="20 20 0 0" Background="#217894" BorderThickness="0">
+            <Border x:Name="TitleBorder" CornerRadius="20 20 0 0" Background="#217894" BorderThickness="0">
                 <Grid>
                         <Grid>
                             <Label HorizontalAlignment="Stretch" 
@@ -73,7 +72,7 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Margin="0 10 0 0" MouseDown="Border_MouseDown" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Medium" Foreground="Azure" HorizontalAlignment="Stretch" Background="#207C9E">
+                            <TextBlock x:Name="AppearanceSettingsTextBlock" Grid.Row="0" Margin="0 10 0 0" MouseDown="Border_MouseDown" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Medium" Foreground="Azure" HorizontalAlignment="Stretch" Background="#207C9E">
                                 Appearance
                             </TextBlock>
                         
@@ -82,7 +81,7 @@
                                     <Image Source="../Appearance/Images/cloud_emoji.png"></Image>
                                 </Label>
                                 <TextBlock VerticalAlignment="Center">Cloud animation</TextBlock>
-                                <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Margin="10,0,50,0">
+                                <ComboBox x:Name="AnimationComboBox" SelectionChanged="AnimationChoiceChanged" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Margin="10,0,50,0">
                                     <ComboBoxItem Content="On"/>
                                     <ComboBoxItem Content="Off"/>
                                 </ComboBox>
@@ -93,11 +92,7 @@
                                     <Image Source="../Appearance/Images/art.png"></Image>
                                 </Label>
                                 <TextBlock VerticalAlignment="Center" >Colors</TextBlock>
-                                <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" Width="70" Margin="31,0,0,0">
-                                    <ComboBoxItem Content="Blue"/>
-                                    <ComboBoxItem Content="Black"/>
-                                    <ComboBoxItem Content="White"/>
-                                    <ComboBoxItem Content="Green"/>
+                                <ComboBox x:Name="ThemesComboBox" SelectionChanged="ThemeChanged" VerticalAlignment="Center" HorizontalAlignment="Center" Width="70" Margin="31,0,0,0">
                                 </ComboBox>
                             </DockPanel>
                         </Grid>
@@ -109,7 +104,7 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0"  Margin="0 10 0 0" MouseDown="Border_MouseDown" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Medium" Foreground="Azure" HorizontalAlignment="Stretch" Background="#207C9E">
+                            <TextBlock x:Name="FileSettingsTextBlock" Grid.Row="0"  Margin="0 10 0 0" MouseDown="Border_MouseDown" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Medium" Foreground="Azure" HorizontalAlignment="Stretch" Background="#207C9E">
                                 Files 
                             </TextBlock>
                             <DockPanel Grid.Row="1" HorizontalAlignment="Stretch">
@@ -129,8 +124,8 @@
                                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left">Max files count</TextBlock>
                                 <Grid Height="23" HorizontalAlignment="Right" Margin="0 0 159 0">
                                     <TextBox x:Name="MfcTxtNum" x:FieldModifier="private" Text="0" Margin="3,2,13,3" />
-                                    <Button Click="MfcCmdUp_OnClick" Background="Transparent" FontSize="10" BorderThickness="0" Padding="0,-4,0,0" Content="▲" Width="10" Margin="33,2,1,13" />
-                                    <Button Click="MfcCmdDown_OnClick" Background="Transparent" BorderThickness="0" FontSize="10" Padding="0,-4,0,0" Content="▼" Width="10" Margin="33,12,1,3" />
+                                    <Button Click="MfcCmdUp_OnClick" Background="Transparent" FontSize="10" BorderThickness="0" Padding="0,0,0,0" Content="▲" Width="10" Margin="33,2,1,13" />
+                                    <Button Click="MfcCmdDown_OnClick" Background="Transparent" BorderThickness="0" FontSize="10" Padding="0,0,0,0" Content="▼" Width="10" Margin="33,12,1,3" />
                                 </Grid> 
                             </DockPanel>
                             <DockPanel Grid.Row="3" HorizontalAlignment="Stretch">
@@ -162,15 +157,15 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0"  Margin="0 10 0 0" MouseDown="Border_MouseDown" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Medium" Foreground="Azure" HorizontalAlignment="Stretch" Background="#207C9E">
+                            <TextBlock x:Name="SecurityTextBlock" Grid.Row="0"  Margin="0 10 0 0" MouseDown="Border_MouseDown" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Medium" Foreground="Azure" HorizontalAlignment="Stretch" Background="#207C9E">
                                 Security 
                             </TextBlock>
                             <DockPanel Grid.Row="1" HorizontalAlignment="Stretch">
                                 <Label Width="30" VerticalAlignment="Center" HorizontalAlignment="Center">
                                     <Image Source="../Appearance/Images/bust_in_silhouette.png"></Image>
                                 </Label>
-                                <TextBlock VerticalAlignment="Center" Margin="5 0">New username</TextBlock>
-                                <TextBox VerticalAlignment="Center" Width="80"/>
+                                <TextBlock VerticalAlignment="Center" Margin="5 0">Username</TextBlock>
+                                <TextBox VerticalAlignment="Center" Margin="20 0 0 0" Width="80"/>
                             </DockPanel>
                         
                             <DockPanel Grid.Row="2" HorizontalAlignment="Stretch">
@@ -181,8 +176,8 @@
                                 <TextBox VerticalAlignment="Center" Width="80"/>
                             </DockPanel>
                         </Grid>
-                        <Border Grid.Row="3" Height="40" BorderThickness="0" Background="#207C9E" CornerRadius="20" Margin="5" Width="250">
-                            <Button Background="Transparent" Style="{StaticResource HighlightButtonStyle}" BorderThickness="0" FontSize="13" FontWeight="Medium" Foreground="Azure" HorizontalAlignment="Stretch">Apply</Button>
+                        <Border x:Name="ApplyButton" Grid.Row="3" Height="40" BorderThickness="0" Background="#207C9E" CornerRadius="20" Margin="5" Width="250">
+                            <TextBlock Background="Transparent" TextAlignment="Center" VerticalAlignment="Center" FontSize="13" FontWeight="Medium" Foreground="Azure" HorizontalAlignment="Stretch">Restart to apply settings*</TextBlock>
                         </Border>
                     </Grid>
                 </Grid>

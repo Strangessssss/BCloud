@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCloud", "BCloud\BCloud.csproj", "{5489E7AD-4D01-445A-BDBB-D72DD91D33FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCloudServer", "BCloudServer\BCloudServer.csproj", "{7242A6BC-D8EF-4C67-83A5-6914FDF3BEDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{5489E7AD-4D01-445A-BDBB-D72DD91D33FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5489E7AD-4D01-445A-BDBB-D72DD91D33FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5489E7AD-4D01-445A-BDBB-D72DD91D33FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7242A6BC-D8EF-4C67-83A5-6914FDF3BEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7242A6BC-D8EF-4C67-83A5-6914FDF3BEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7242A6BC-D8EF-4C67-83A5-6914FDF3BEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7242A6BC-D8EF-4C67-83A5-6914FDF3BEDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

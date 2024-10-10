@@ -12,7 +12,8 @@ public class UserProfile: ObservableObject, IShowingItem
         StatusImageId = Random.Shared.Next(1, 8);
     }
 
-    public string Id { get; set; }
+    public static string BackgroundColor { get; set; } = "#5D90A0";
+    
     public string Type { get; set; } = "User";
     public string Name { get; set; }
     public bool Authorized  { get; set; } =  false;

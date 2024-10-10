@@ -1,0 +1,9 @@
+namespace BCloud.Services.Messages;
+
+public class Metadata(string sender)
+{
+    public string Sender { get; set; } = sender;
+    public long FileSize { get; set; }
+    public string? FileName { get; set; }
+    public string? Destination { get; set; }
+}
