@@ -9,38 +9,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79d8692f-c563-4277-8142-238ff59a661d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BCloud/Appearance/AppearanceSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Appearance/Services/AppearanceManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Appearance/Themes/Blue.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Appearance/Themes/Images/Candy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Appearance/Themes/Images/Cloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Appearance/Themes/Images/Fire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Appearance/Themes/Orange.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Appearance/Themes/Pink.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Messages/ReceivedFilesMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Services/ClientService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Services/Messages/File.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Services/Messages/Metadata.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloud/Services/SystemService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloudServer/Services/Metadata.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BCloudServer/Services/ServerManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BCloud/Appearance/Images/UserStatusImages/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BCloud/Credentials.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BCloud/Services/CredentialsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BCloud/Services/Messages/SignUpMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BCloud/Views/LoginView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BCloud/Views/LoginView.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BCloudServer/Services/Entities/Configurations/UserConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BCloudServer/Services/Entities/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BCloudServer/Services/UsersDb.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BCloudServer/Services/UsersManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BCloud/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BCloud/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BCloud.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BCloud.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BCloud/Appearance/Images/cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BCloud/Appearance/Images/UserStatusImages/question.png" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Appearance/Images/question.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BCloud/BCloud.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/BCloud.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BCloud/Messages/BackSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BCloud/Messages/FrontSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BCloud/Messages/SettingsRequest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BCloud/Converters/UserStatusIdToImage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Converters/UserStatusIdToImage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BCloud/Models/Interfaces/IShowingItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Models/Interfaces/IShowingItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BCloud/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Models/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BCloud/Models/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Models/UserProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BCloud/Services/Messages/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Services/Messages/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BCloud/Services/ServerManagerService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BCloud/Services/ClientService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Services/ClientService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BCloud/Services/Messages/File.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BCloud/Services/Messages/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Services/Messages/FileMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BCloud/Services/Messages/Metadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Services/Messages/Metadata.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BCloud/ViewModels/BCloudViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/ViewModels/BCloudViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BCloud/Views/BCloudUser.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Views/BCloudUser.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BCloud/Views/BCloudUser.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Views/BCloudUser.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BCloud/Views/SettingsView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Views/SettingsView.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BCloud/Views/SettingsView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloud/Views/SettingsView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BCloudServer/Services/Metadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloudServer/Services/Metadata.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BCloudServer/Services/ServerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BCloudServer/Services/ServerManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,10 +69,11 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1cdf3361d36523e257d3272333fc81e74db51d472a6a30c34b99542e357db/Stack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4cebf87719fc206b5a3b9ca772f2c303052db49f67282721b3304c7f48b783/Border.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BCloud/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BCloud/Services/Messages/Message.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BCloud/Services/Messages/FileMessage.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -188,6 +185,11 @@
       <workItem from="1728405723907" duration="4132000" />
       <workItem from="1728486742790" duration="392000" />
       <workItem from="1728568340386" duration="7669000" />
+      <workItem from="1728577321644" duration="1079000" />
+      <workItem from="1728726141881" duration="3262000" />
+      <workItem from="1728734775147" duration="4223000" />
+      <workItem from="1728739058231" duration="2783000" />
+      <workItem from="1728761054362" duration="1522000" />
     </task>
     <task id="LOCAL-00001" summary="SettingsView finished">
       <option name="closed" value="true" />
@@ -205,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728113974434</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="File Load">
+      <option name="closed" value="true" />
+      <created>1728577353748</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728577353748</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +249,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="SettingsView finished" />
     <MESSAGE value="Finished Setting view front" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Setting view front" />
+    <MESSAGE value="File Load" />
+    <option name="LAST_COMMIT_MESSAGE" value="File Load" />
   </component>
 </project>

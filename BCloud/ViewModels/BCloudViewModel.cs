@@ -17,30 +17,51 @@ public partial class BCloudViewModel : ObservableObject
     
     public BCloudViewModel()
     {
-        _clientService = new ("127.0.0.1", 8080, _user.Name);
+        _clientService = new ClientService("127.0.0.1", 8080);
         _ = _clientService.Connect();
         
         WeakReferenceMessenger.Default.Register<ReceivedFilesMessage>(this, OnReceivedFilesMessage);
+        WeakReferenceMessenger.Default.Register<SignUpMessage>(this, TryRegister);
         
-        _explorerItems = new ObservableCollection<IShowingItem>();
-        _explorerItems.Add(new UserProfile(_user.Name){Authorized = true});
-        _explorerItems.Add(new UserProfile("Xanbaba"){Authorized = false});
-        _explorerItems.Add(new UserProfile("Ali"){Authorized = false});
-        _explorerItems.Add(new UserProfile("Samir"){Authorized = false});
-        _explorerItems.Add(new UserProfile("Alex"){Authorized = false});
-        _explorerItems.Add(new UserProfile("Ramil"){Authorized = false});
-        _explorerItems.Add(new UserProfile("Magomed"){Authorized = false});
+        _explorerItems = [];
+
+        if (CredentialsService.Name == null)
+        {
+            _explorerItems.Add(new UserProfile("Log in")
+            {
+                StatusImageId = 8,
+                Authorized = true,
+                IconPath = "../Appearance/Images/question.png"
+            });
+        }
+        // _explorerItems.Add(new UserProfile(_user.Name){Authorized = true});
+        // _explorerItems.Add(new UserProfile("Xanbaba"){Authorized = false});
+        // _explorerItems.Add(new UserProfile("Ali"){Authorized = false});
+        // _explorerItems.Add(new UserProfile("Samir"){Authorized = false});
+        // _explorerItems.Add(new UserProfile("Alex"){Authorized = false});
+        // _explorerItems.Add(new UserProfile("Ramil"){Authorized = false});
+        // _explorerItems.Add(new UserProfile("Magomed"){Authorized = false});
+    }
+
+    private void TryRegister(object recipient, SignUpMessage message)
+    {
+        _clientService.Register(message);
     }
 
     private void OnReceivedFilesMessage(object recipient, ReceivedFilesMessage message)
     {
-        _clientService.Send(new Message(User.Name)
+        if (User is null)
+        {
+            return;
+        }
+        
+        _clientService.SendFiles(new FileMessage(User.Name)
         {
             Destination = message.Destination,
-            Content = message.Files
+            FilePaths = message.Files
         });
     }
 
-    [ObservableProperty] private ObservableCollection<IShowingItem>? _explorerItems;
-    [ObservableProperty] private User _user = new(){Name = "Tima"};
+    [ObservableProperty] private ObservableCollection<IShowingItem>? _explorerItems = new ObservableCollection<IShowingItem>();
+    [ObservableProperty] private User? _user;
 }

@@ -27,13 +27,11 @@ public class ServerManager
         {
             var client = await _listener.AcceptTcpClientAsync(_cancellationToken);
             _ = Task.Run(() => HandleClient(client), _cancellationToken);
-            Console.WriteLine($"Client {client.Client.RemoteEndPoint} connected");
         }
     }
 
     private async Task HandleClient(TcpClient client)
     {
-        
         await using var stream = client.GetStream();
         
         var metadataBuffer = new byte[1024]; 
@@ -41,7 +39,20 @@ public class ServerManager
         var metadataJson = Encoding.UTF8.GetString(metadataBuffer, 0, bytesRead);
         var metadata = JsonSerializer.Deserialize<Metadata>(metadataJson);
 
-        await using var fileStream = File.Create(metadata!.FileName!);
+        switch (metadata?.MessageType)
+        {
+            case "File":
+                await AcceptFile(metadata, stream);
+                break;
+            case "Register":
+                
+                break;
+        }
+    }
+
+    private async Task AcceptFile(Metadata metadata, Stream stream)
+    {
+        var fileStream = File.Create(metadata!.FileName!);
         var fileBuffer = new byte[1024];
         var bytesRemaining = metadata.FileSize;
         
@@ -52,6 +63,11 @@ public class ServerManager
             await fileStream.WriteAsync(fileBuffer, 0, read, _cancellationToken);
             bytesRemaining -= read;
         }
+        fileStream.Close();
+    }
+
+    private async Task Register(Metadata metadata)
+    {
         
     }
 }

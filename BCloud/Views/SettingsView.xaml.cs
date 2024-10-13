@@ -121,7 +121,6 @@ public partial class SettingsView
         BackgroundBorder.Background = new SolidColorBrush(ChangeBackgroundColor(colors["Color2"]));
         AppearanceSettingsTextBlock.Background = new SolidColorBrush(ChangeBackgroundColor(colors["Color3"]));
         FileSettingsTextBlock.Background = new SolidColorBrush(ChangeBackgroundColor(colors["Color3"]));
-        SecurityTextBlock.Background = new SolidColorBrush(ChangeBackgroundColor(colors["Color3"]));
         ApplyButton.Background = new SolidColorBrush(ChangeBackgroundColor(colors["Color3"]));
     }
     

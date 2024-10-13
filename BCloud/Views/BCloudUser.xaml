@@ -80,7 +80,7 @@
                                 </ItemsControl.ItemsPanel>
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <Button Background="Transparent" BorderThickness="0">
+                                        <Button Command="{Binding OpenCommand}" Background="Transparent" BorderThickness="0">
                                             <Button.Style>
                                                 <Style TargetType="Button">
                                                     <Setter Property="Template">
@@ -102,7 +102,7 @@
                                                                                 <Label Width="35" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                                                                                 <StackPanel Orientation="Horizontal">
                                                                                     <Label Drop="UIElement_OnDrop" DragEnter="UIElement_OnDragEnter" DragLeave="UIElement_OnDragLeave" Width="90" Padding="10">
-                                                                                        <Image Source="../Appearance/Images/bust_in_silhouette.png" />
+                                                                                        <Image Source="{Binding IconPath}"/>
                                                                                     </Label>
                                                                                 </StackPanel>
                                                                                 <Label Width="35" HorizontalAlignment="Right" VerticalAlignment="Bottom">

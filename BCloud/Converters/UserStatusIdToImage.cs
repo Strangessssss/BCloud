@@ -9,7 +9,7 @@ public class UserStatusIdToImage : IValueConverter
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         var user = (UserProfile)value!;
-        return user.StatusImageId is < 8 and > 0 ? $"../Appearance/Images/UserStatusImages/{user.StatusImageId}.png" : "../Appearance/Images/UserStatusImages/question.jpg";
+        return $"../Appearance/Images/UserStatusImages/{user.StatusImageId}.png";
     }
 
     public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

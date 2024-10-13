@@ -14,26 +14,37 @@ public class ClientService
     private readonly string _name;
     
     
-    public ClientService(string ip, int port, string name)
+    public ClientService(string ip, int port)
     {
         _ip = ip;
         _port = port;
-        _name = name;
     }
     
     public async Task Connect()
     {
         await Task.Run(() =>
         {
-            var message = new Message(_name);
-            Send(message);
+            
         });
     }
-    
-    public void Send(Message message)
+
+    public void Register(SignUpMessage message)
     {
-        if (message.Content == null) return;
-        foreach (var mess in message.Content)
+        var client = new TcpClient();
+        client.ConnectAsync(IPAddress.Parse(_ip), _port);
+        var metadata = new Metadata(message.Username)
+        {
+            MessageType = "Register",
+            Password = message.Password
+        };
+        var metadataBytes = JsonSerializer.SerializeToUtf8Bytes(metadata);
+        client.GetStream().Write(metadataBytes);
+    }
+    
+    public void SendFiles(FileMessage fileMessage)
+    {
+        if (fileMessage.FilePaths == null) return;
+        foreach (var mess in fileMessage.FilePaths)
         {
             _ = Task.Run(() =>
             {
@@ -41,11 +52,12 @@ public class ClientService
                 client.ConnectAsync(IPAddress.Parse(_ip), _port);
                 using var stream = client.GetStream();
                 using var fileStream = File.OpenRead(mess);
-                var metadata = new Metadata(message.Sender)
+                var metadata = new Metadata(fileMessage.Sender)
                 {
+                    MessageType = "File",
                     FileSize = fileStream.Length,
                     FileName = Path.GetFileName(mess),
-                    Destination = message.Destination
+                    Destination = fileMessage.Destination
                 };
 
                 var metadataBytes = JsonSerializer.SerializeToUtf8Bytes(metadata);

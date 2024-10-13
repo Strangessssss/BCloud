@@ -1,4 +1,5 @@
 using System.Drawing;
+using CommunityToolkit.Mvvm.Input;
 
 namespace BCloud.Models.Interfaces;
 
@@ -11,4 +12,6 @@ public interface IShowingItem
     public string IconPath { get; set; }
     
     public IShowingItem ItSelf => this;
+
+    [RelayCommand] public void Open();
 }

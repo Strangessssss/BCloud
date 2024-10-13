@@ -50,9 +50,6 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <None Remove="ButtonAppearance\Images\UserStatusImages\question.png" />
-      <Content Include="Appearance\Images\UserStatusImages\question.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="ButtonAppearance\Images\traffic_light.png" />
       <Content Include="Appearance\Images\traffic_light.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -139,6 +136,18 @@
       <Content Include="Appearance\Themes\Images\Cloud.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Credentials.json" />
+      <Content Include="Credentials.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Appearance\Images\UserStatusImages\exclamation.png" />
+      <Content Include="Appearance\Images\UserStatusImages\8.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Appearance\Images\question.png" />
+      <Content Include="Appearance\Images\question.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
@@ -148,6 +157,11 @@
 
     <ItemGroup>
       <Page Update="Views\BCloudUser.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Views\LoginView.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
